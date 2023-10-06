@@ -195,10 +195,11 @@ const getBooks = (bookArray) => {
   bookArray.forEach(book => {
     container.innerHTML +=
       `<div class="card">
-      <p>${book.title}</p> 
+      <p class="title">${book.title}</p> 
       <img src=${book.image} art=${book.title}>
-      <p>Released ${book.year}</p>
-      <p>Released ${book.description}</p>
+      <p class="rating">Rating ${book.rating}</p>
+      <p class="desc">Released ${book.description}</p>
+      <p class="year">Released ${book.year}</p>
       </div>`
   });
 }

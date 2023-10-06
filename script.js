@@ -187,8 +187,7 @@ const books = [
 
 // Declare variable container and target the id con. from index.html
 const container = document.getElementById('container')
-// Declare and target id filterDropdown from index.html
-const filterDropdown = document.getElementById('filterDropdown')
+
 
 // Declare variable and foreach book item make a div w info to index.html
 const getBooks = (bookArray) => {
@@ -204,15 +203,64 @@ const getBooks = (bookArray) => {
   });
 }
 
+// Declare and target id filterDropdown from index.html and 
+const filterDropdown = document.getElementById('filterDropdown')
 const filterBooks = () => {
   const value = filterDropdown.value;
+  // if the value "All" is selected =  display all books 
   if (value === "all") {
     getBooks(books)
+    // otherwise display the genre that is selected from the filterdropdown
   } else {
     const filterList = books.filter((book) => book.genre === value)
     getBooks(filterList);
-  }
+  };
 };
-
 filterDropdown.addEventListener("change", filterBooks)
 getBooks(books);
+
+// Sort method || Sort by rating function
+function sortRating() {
+  books.sort((a, b) => b.rating - a.rating);
+  getBooks(books);
+}
+
+// Toggle btn for rating
+let sortBy = true;
+function toggleRating() {
+  if (sortBy) {
+    books.sort((a, b) => b.rating - a.rating);
+  } else {
+    books.sort((a, b) => a.rating - b.rating);
+  }
+  sortBy = !sortBy;
+  getBooks(books);
+}
+const btn = document.getElementById("btn")
+btn.addEventListener("click", toggleRating);
+
+
+// Sort method || Sort by release function
+function sortRelease() {
+  books.sort((a, b) => b.year - a.year);
+  getBooks(books);
+}
+
+let btnRelease = true;
+function toggleRelease() {
+  if (btnRelease) {
+    books.sort((a, b) => b.year - a.year);
+  } else {
+    books.sort((a, b) => a.year - b.year);
+  }
+  btnRelease = !btnRelease;
+  getBooks(books);
+}
+const btn2 = document.getElementById("btn2")
+btn2.addEventListener("click", toggleRelease);
+
+
+// SortRating function to sort the books
+sortRating();
+getBooks(books)
+

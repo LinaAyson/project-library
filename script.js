@@ -241,12 +241,13 @@ const btn = document.getElementById("btn")
 btn.addEventListener("click", toggleRating);
 
 
+
 // Sort method || Sort by release function
 function sortRelease() {
   books.sort((a, b) => b.year - a.year);
   getBooks(books);
 }
-
+// Toggle btn for release
 let btnRelease = true;
 function toggleRelease() {
   if (btnRelease) {
@@ -261,7 +262,7 @@ const btn2 = document.getElementById("btn2")
 btn2.addEventListener("click", toggleRelease);
 
 
-// SortRating function to sort the books
-sortRating();
+// Call SortRating function to sort the books
+sortRating()
 getBooks(books)
 

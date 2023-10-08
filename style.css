@@ -33,7 +33,7 @@ h1, h2 {
 
 .card p {
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 .card .title {
@@ -43,11 +43,14 @@ h1, h2 {
 
 .card .rating {
   font-size: medium;
-  color: yellow;
+  color: #314b42;
+  font-weight: bolder;
+
 }
 
 .card .desc {
   font-style: italic;
+
 }
 
 #filterDropdown {

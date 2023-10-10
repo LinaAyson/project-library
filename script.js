@@ -196,10 +196,13 @@ const getBooks = (bookArray) => {
     container.innerHTML +=
       `<div class="card">
       <p class="title">${book.title}</p> 
-      <img src=${book.image} art=${book.title}>
+      <img src=${book.image}>
       <p class="rating">Rating ${book.rating}</p>
-      <p class="desc">Released ${book.description}</p>
-      <p class="year">Released ${book.year}</p>
+      <p class="desc">Description ${book.description}</p>
+      <p class="year">Author: ${book.author}</p>
+      <p class="year">Released: ${book.year}</p>
+      <p class="year">Genre: ${book.genre}</p>
+
       </div>`
   });
 }
@@ -265,4 +268,26 @@ btn2.addEventListener("click", toggleRelease);
 // Call SortRating function to sort the books
 sortRating()
 getBooks(books)
+
+// Declare variables and target for users input and search button
+const userInput = document.getElementById('userInput');
+const searchBtn = document.getElementById('searchBtn');
+
+// Add event listener for the search button click
+searchBtn.addEventListener('click', searchBook);
+
+// Search function
+function searchBook() {
+  const searchTerm = userInput.value;
+  if (searchTerm === '') {
+    // If searchbar is empty, show all
+    getBooks(books);
+  } else {
+    // filter books on author name
+    const searchResults = books.filter((book) =>
+      book.author.toLowerCase().includes(searchTerm)
+    );
+    getBooks(searchResults);
+  }
+}
 

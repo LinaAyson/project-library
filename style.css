@@ -12,7 +12,7 @@ body {
 }
 
 select, button {
-  height: 50px;
+  height: 25px;
   border-radius: 8px;
   background-color: #f3f3f3;
   border: 1px solid rgb(210, 210, 210);
@@ -30,9 +30,9 @@ select, button {
   width: 250px;
   vertical-align: text-top;
   border-radius: 6px;
-  box-shadow: rgb(185, 184, 184) 4px 4px 2px;
+  box-shadow: rgb(239, 239, 239) 4px 4px 2px;
   margin: 10px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .card img {
@@ -45,7 +45,6 @@ select, button {
   background-color: #e8e8e8;
 }
 
-
 #search-bar {
   padding: 5px;
   margin: 5px;
@@ -54,8 +53,6 @@ select, button {
 #searchBtn {
   background-color: #f3f3f3;
   border: 1px solid rgb(210, 210, 210);
-  height: 25px;
-  width: 75px;
 }
 
 #searchBtn:hover {
